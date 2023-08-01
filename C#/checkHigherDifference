@@ -1,0 +1,38 @@
+using System;
+
+class Program {
+
+  static void Main (string[] args) {
+  
+    int[] myArray;
+    int arraySize = 0;
+    int largestValue = 0;
+    int smallestValue = 0;
+    int difference;
+    
+    Console.WriteLine("Qual é o tamanho do array? ");
+      arraySize = Convert.ToInt32(Console.ReadLine());
+      myArray = new int[arraySize];
+
+    for (int indexA = 0; indexA < arraySize; indexA++) {  
+      Console.Write(" Informe os valores do array: ");
+      myArray[indexA] = int.Parse(Console.ReadLine());
+    }
+  
+      largestValue = myArray[0];
+      smallestValue = myArray[0];
+
+    for (int indexB = 1; indexB < myArray.Length; indexB += 1) { 
+           
+      if (largestValue < myArray[indexB]) {
+        largestValue = myArray[indexB]; 
+      }
+      if (smallestValue > myArray[indexB]) {
+        smallestValue = myArray[indexB];
+      }
+    }
+  
+    difference = largestValue - smallestValue;
+    Console.WriteLine("\nA diferença entre o maior e o menor número é: " + difference + ".");
+  }
+}
